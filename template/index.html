@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOFA</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <!-- google fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- aos -->
+  <link rel="stylesheet" href="./css/aos.css">
+  <!-- lightbox -->
+  <link rel="stylesheet" href="./css/magnific-popup.css">
+  <link rel="stylesheet" href="./css/magnific-popup-self.css">
+  <!-- mdi -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css">
+  <!-- self -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* section01 - navbar */
+    .navbar {
+      background-color: #fff;
+    }
+
+    .section01 button span {
+      font-size: 30px;
+      vertical-align: text-top;
+    }
+
+    .navbar button,
+    .dropdown-menu {
+      border: none;
+      outline: none;
+      background: none;
+      padding: 0
+    }
+
+    .navbar button:hover {
+      color: skyblue;
+    }
+
+    .dropdown-item:hover {
+      background-color: skyblue;
+      color: white !important;
+    }
+
+    .navbar-brand img {
+      width: 90px;
+      margin-left: 10px;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    /* section02 - swiper */
+    .section02 .swiper-button-next::after,
+    .section02 .swiper-button-prev::after {
+      color: #000;
+      font-size: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+
+    .section02 .swiper-button-next,
+    .section02 .swiper-button-prev {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #FFF;
+      opacity: 1;
+      display: none;
+    }
+
+    .section02 .swiper-pagination-bullet {
+      background-color: #FFF;
+      opacity: 1;
+      width: 15px;
+      height: 15px;
+    }
+
+    .section02 .swiper-pagination-bullet-active {
+      background-color: var(--bs-yellow);
+    }
+
+    .section02 .container {
+      position: relative;
+      margin-top: 56px;
+      padding: 0;
+      height: 40vh;
+      max-width: 100vw;
+    }
+
+    .section02 .swiper {
+      height: 100%;
+      width: 100%;
+    }
+
+    .section02 .swiper-slide {
+      font-size: 18px;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background-position: center;
+    }
+
+    .section02 .swiper-slide {
+      font-size: 18px;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background-position: center;
+    }
+
+    .section02 .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section02 .swiper-slide .copywriting1,
+    .section02 .swiper-slide .copywriting2,
+    .section02 .swiper-slide .copywriting3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .section02 .swiper-slide .title {
+      font-weight: 300;
+      letter-spacing: 0;
+      font-size: 32px;
+      line-height: 1.375;
+    }
+
+    .section02 .swiper-slide .subtitle {
+      text-align: center;
+      width: 80vw;
+      font-weight: 200;
+      letter-spacing: 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .section02 .swiper-slide button {
+      background-color: #fff;
+      border: none;
+    }
+
+    .section02 .swiper-slide button:hover {
+      background-color: skyblue;
+    }
+
+    .section02 .swiper-slide a:hover {
+      color: #fff;
+    }
+
+    .section02 .swiper-slide .copywriting1 {
+      color: #fff;
+    }
+
+    .section02 .swiper-slide .copywriting2,
+    .section02 .swiper-slide .copywriting3 {
+      color: #000;
+    }
+
+    .section02 .swiper-slide .copywriting1 button {
+      background-color: #fff;
+      border: none;
+    }
+
+    .section02 .swiper-slide .copywriting2 button,
+    .section02 .swiper-slide .copywriting3 button {
+      background-color: #000;
+      border: none;
+    }
+
+    .section02 .swiper-slide .copywriting1 button a {
+      color: #000;
+    }
+
+    .section02 .swiper-slide .copywriting2 button a,
+    .section02 .swiper-slide .copywriting3 button a {
+      color: #fff;
+    }
+
+    .section02 .swiper-slide .copywriting1 button:hover,
+    .section02 .swiper-slide .copywriting2 button:hover,
+    .section02 .swiper-slide .copywriting3 button:hover {
+      background-color: skyblue;
+      color: #fff;
+    }
+
+    /* section03 - card-categories */
+    .section03 {
+      background-color: #454648;
+      color: #fff;
+      width: 100%;
+    }
+
+    .section03 .title {
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .section03 .card {
+      width: 95%;
+      background-color: #454648;
+      border: 1px solid #e1e1e1;
+      border-radius: 0;
+      margin: auto;
+    }
+
+    .section03 .card-body .mdi {
+      display: inline-block;
+      font-size: 34px;
+    }
+
+    .section03 .card-title {
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .section03 .card-subtitle {
+      font-size: 13px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* section04 - card-trending products */
+    .section04 {
+      background-color: #FFF;
+      color: #000;
+    }
+
+    .section04 .card {
+      background-color: #EEE;
+      border: none;
+      border-radius: 5px;
+      position: relative;
+      text-align: center;
+      padding: 20px 15px 30px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1;
+      margin: auto;
+    }
+
+    .section04 .card-body {
+      padding: 0;
+      flex: 0;
+    }
+
+    .section04 .card-body .product-img {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 180px;
+    }
+
+    .section04 .card-body .product-img img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .section04 .card .btn {
+      margin-top: 15px;
+    }
+
+    .section04 .tag {
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      top: 25px;
+      right: 15px;
+      padding: 5px 12px;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .section04 .tag-sale {
+      background-color: #f96666;
+    }
+
+    .section04 .tag-new {
+      background-color: #93a6ab;
+    }
+
+    .section04 .card-title:hover {
+      color: skyblue;
+    }
+
+    .section04 .card-subtitle {
+      font-size: 14px;
+    }
+
+    .section04 .card-subtitle .price {
+      color: skyblue;
+      font-weight: 900;
+    }
+
+    .section04 button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      margin: 10px;
+    }
+
+    .section04 button span {
+      font-size: 26px;
+      vertical-align: text-top;
+    }
+
+    .section04 button:nth-child(1) {
+      background-color: #e9da5d;
+      color: #000;
+    }
+
+    .section04 button:nth-child(1):hover {
+      background-color: skyblue;
+      color: #FFF;
+    }
+
+    .section04 button:nth-child(2) {
+      background-color: skyblue;
+      color: #FFF;
+    }
+
+    .section04 button:nth-child(2):hover {
+      background-color: #e9da5d;
+      color: #000;
+    }
+
+    /* section05 - introduction */
+    .section05 {
+      background-color: #eee;
+      color: #000;
+      /* width: 100vw; */
+      text-align: center;
+    }
+
+    .section05 .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section05 .title {
+      font-size: 26px;
+      font-weight: 400;
+    }
+
+    .section05 .pic img {
+      max-width: 100%;
+    }
+
+    .section05 .text {
+      font-size: 17px;
+    }
+
+    .section05 button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      background-color: skyblue;
+      color: #FFF;
+      margin: 10px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .section05 button span {
+      font-size: 18px;
+    }
+
+    /* section06 - card-portfolio */
+    .section06 .container {
+      margin: auto;
+    }
+
+    .section06 .card,
+    .section06 .card-img-top {
+      background-color: #f9faf9;
+      border: none;
+      border-radius: 0;
+    }
+
+    .section06 .card-title {
+      font-size: 16px;
+    }
+
+    .section06 .card-title:hover {
+      color: skyblue;
+    }
+
+    .section06 .card-text {
+      font-size: 14px;
+      font-weight: 900;
+      color: skyblue;
+    }
+
+    .section06 button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background-color: #FFF;
+    }
+
+    .section06 button span {
+      font-size: 26px;
+      vertical-align: text-top;
+    }
+
+    /* section07 - swiper */
+    .section07 {
+      background-color: #eee;
+      color: #000;
+    }
+
+    .section07 .container {
+      position: relative;
+      padding: 0;
+      width: 100%;
+    }
+
+    .section07 .swiper {
+      height: 100%;
+      width: 100%;
+    }
+
+    .section07 .swiper-slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .section07 .swiper-slide .title {
+      font-size: 14px;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .section07 .swiper-slide .title:hover {
+      color: skyblue;
+    }
+
+    .section07 .swiper-slide .subtitle {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #777;
+    }
+
+    .section07 .swiper-pagination-bullet {
+      background-color: #ddd;
+      opacity: 1;
+      width: 15px;
+      height: 15px;
+    }
+
+    .section07 .swiper-pagination-bullet-active {
+      background-color: skyblue;
+    }
+
+    .section07 .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* section08 - footer */
+    .section08 {
+      background-color: #555;
+      color: #000;
+      text-align: center;
+    }
+
+    .section08 .contact {
+      text-align: center;
+    }
+
+    .section08 .location,
+    .section08 .tel,
+    .section08 .mail {
+      margin: 20px;
+    }
+
+    .section08 .location span,
+    .section08 .tel span,
+    .section08 .mail span {
+      display: block;
+      margin: 0;
+    }
+
+    .section08 img {
+      margin-top: 3rem;
+      width: 30%
+    }
+
+    .section08 li,
+    .section08 span {
+      color: rgba(255, 255, 255, 0.5);
+      list-style: none;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .section08 hr {
+      color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+    }
+
+    .section08 .socialmedia span {
+      color: #fff;
+      width: 100%;
+    }
+
+    .section08 .socialmedia .mdi {
+      font-size: 20px;
+      margin: 3px;
+    }
+
+    .section08 .contacts .mdi {
+      font-size: 18px;
+      color: skyblue;
+      margin: 3px;
+    }
+
+    .section08 h6 {
+      color: #FFF;
+      font-weight: bolder;
+    }
+
+    .section08 p {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .section08 input {
+      background-color: #555;
+      border: 1px solid #555;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      outline: none;
+    }
+
+    .section08 button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: skyblue;
+      border: none;
+    }
+
+    .section08 button span {
+      font-size: 25px;
+      vertical-align: center;
+      transform: rotate(-45deg);
+    }
+
+    /* section09 - copyright */
+    .section09 span {
+      opacity: 0.7;
+      font-size: 12px;
+      margin: 6px;
+    }
+
+    .section09 img {
+      display: inline-block;
+      margin: 10px;
+      width: 40px;
+    }
+
+    @media (min-width: 768px) {
+
+
+      .section02 .container {
+        max-width: 100vw;
+        height: calc(40vh + 10vw);
+      }
+
+      .section02 .swiper-slide .title {
+        font-size: 50px;
+      }
+
+      .section03 .title {
+        font-size: 35px;
+      }
+
+      .section03 .card-body .mdi {
+        font-size: 40px;
+      }
+
+      .section03 .card-subtitle {
+        font-size: 15px;
+      }
+
+      .section05 .container {
+        max-width: 720px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .section05 .container .r,
+      .section05 .container .rt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section05 .container .rb {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .section07 .swiper-button-prev {
+        top: 40%;
+        left: -50px;
+      }
+
+      .section07 .swiper-button-next {
+        top: 40%;
+        right: -50px;
+      }
+
+      .section07 .swiper-button-next:after,
+      .section07 .swiper-button-prev:after {
+        font-family: none;
+        color: #777;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .section08 {
+        text-align: left;
+      }
+
+      .section08 .location,
+      .section08 .tel,
+      .section08 .mail {
+        display: flex;
+        align-items: center;
+        margin: 0;
+      }
+
+      .section08 .location span,
+      .section08 .tel span,
+      .section08 .mail span {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .section08 .email {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 992px) {
+
+      .section02 .swiper-button-next,
+      .section02 .swiper-button-prev {
+        display: block;
+      }
+
+      .section02 .swiper-pagination {
+        display: none;
+      }
+
+      .section02 .swiper-slide .title {
+        font-size: 70px;
+      }
+
+      .section03 .title {
+        font-size: 45px;
+      }
+
+      .section03 .card-body .mdi {
+        font-size: 44px;
+      }
+
+      .section04 .card {
+        padding-bottom: 40px;
+        margin-bottom: 50px;
+      }
+
+      .section04 .card-body .product-img {
+        min-height: 200px;
+      }
+
+      .section04 .card .btn {
+        display: none;
+      }
+
+      .section05 .container {
+        max-width: 720px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    }
+
+    html:not(.no-js) [data-aos=slide-right] {
+      -webkit-transform: translate3d(-1000%, 0, 0);
+      transform: translate3d(-1000%, 0, 0);
+    }
+
+    html:not(.no-js) [data-aos=slide-left] {
+      -webkit-transform: translate3d(1000%, 0, 0);
+      transform: translate3d(1000%, 0, 0);
+    }
+  </style>
+
+</head>
+
+<body>
+  <!----------- navbar ----------->
+  <section class="section01 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light p-1">
+      <div class="container-fluid">
+        <div class="w-100 d-flex justify-content-between align-items-center">
+          <div class="navbar-right d-flex align-items-center ms-lg-5">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon" style="font-size: 18px; color: #000; border: none;"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="./materials/logo-default-210x88.png" alt="logo"></a>
+          </div>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body m-lg-auto">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    PAGES
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">ABOUT US</a></li>
+                    <li><a class="dropdown-item" href="#">WHAT WE OFFER</a></li>
+                    <li><a class="dropdown-item" href="#">OUR TEAM</a></li>
+                    <li><a class="dropdown-item" href="#">TESTIMONIALS</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    BLOG
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">GRID BLOG</a></li>
+                    <li><a class="dropdown-item" href="#">BLOG LIST</a></li>
+                    <li><a class="dropdown-item" href="#">BLOG POST</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    GALLERY
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">GRID GALLERY</a></li>
+                    <li><a class="dropdown-item" href="#">BLOG FULLWIDTH GALLERY</a></li>
+                    <li><a class="dropdown-item" href="#">MASONRY GALLERY</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    ELEMENTS
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="d-flex align-bottom" style="color: skyblue;">
+                      <span class="material-symbols-outlined">apps</span>
+                      &nbsp;
+                      <span>ELEMENTS</span>
+                    </div>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">TYPOGRAPHY</a></li>
+                    <li><a class="dropdown-item" href="#">ICON LISTS</a></li>
+                    <li><a class="dropdown-item" href="#">PROGRESS BARS</a></li>
+                    <li><a class="dropdown-item" href="#">CALLS TO ACTION</a></li>
+                    <li><a class="dropdown-item" href="#">TABS & ACCORDIONS</a></li>
+                    <li><a class="dropdown-item" href="#">BUTTONS</a></li>
+                    <li><a class="dropdown-item" href="#">TABLES</a></li>
+                    <li><a class="dropdown-item" href="#">FORMS</a></li>
+                    <li><a class="dropdown-item" href="#">COUNTERS</a></li>
+                    <li><a class="dropdown-item" href="#">GRID SYSTEM</a></li>
+                    <br>
+                    <div class="d-flex align-bottom" style="color: skyblue;">
+                      <span class="material-symbols-outlined">layers</span>
+                      &nbsp;
+                      <span>ADDITIONAL PAGES</span>
+                    </div>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">404 PAGE</a></li>
+                    <li><a class="dropdown-item" href="#">COMING SOON</a></li>
+                    <li><a class="dropdown-item" href="#">CONTACT US</a></li>
+                    <li><a class="dropdown-item" href="#">PRIVACY POLICY</a></li>
+                    <li><a class="dropdown-item" href="#">SEARCH RESULTS</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    SHOP
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">GRID SHOP</a></li>
+                    <li><a class="dropdown-item" href="#">SHOP LIST</a></li>
+                    <li><a class="dropdown-item" href="#">SINGLE PRODUCT</a></li>
+                    <li><a class="dropdown-item" href="#">CART PAGE</a></li>
+                    <li><a class="dropdown-item" href="#">CHECKOUT</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="navbar-left me-lg-5">
+            <button>
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <button>
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+            <button>
+              <span class="material-symbols-outlined">subject</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <!----------- swiper ----------->
+  <section class="section02">
+    <div class="container">
+      <div class="swiper swipertop">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="copywriting1 d-flex flex-column align-items-center">
+              <div class="title">TOP-NOTCH FURNITURE</div>
+              <div class="subtitle mt-4 mb-4">
+                Sofa Store provides the best furniture and accessories for
+                homes and offices.</div>
+              <div class="text">
+                <button><a class="btn" href="#">Shop now</a></button>
+              </div>
+            </div>
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/slide-1.jpg">
+          </div>
+          <div class="swiper-slide">
+            <div class="copywriting2 d-flex flex-column align-items-center">
+              <div class="title">
+                <span>QUALITY</span>
+                <span style="color: #aaa;">DECOR</span>
+              </div>
+              <div class="subtitle mt-4 mb-4">
+                Choose anything you need from a wide range of impressive home decor solutions.
+              </div>
+              <div class="text">
+                <button><a class="btn" href="#">Shop now</a></button>
+              </div>
+            </div>
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/slide-2.jpg">
+          </div>
+          <div class="swiper-slide">
+            <div class="copywriting3 d-flex flex-column align-items-center">
+              <div class="title">
+                <span>IMPRESSIVE</span>
+                <span style="color: #aaa;">LIGHTING</span>
+              </div>
+              <div class="subtitle mt-4 mb-4">
+                Improve your home’s lighting with hundreds of products available at Sofa.
+              </div>
+              <div class="text">
+                <button><a class="btn" href="#">Shop now</a></button>
+              </div>
+            </div>
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/slide-3.jpg">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!----------- card-categories ----------->
+  <section class="section03 text-center">
+    <div class="container d-flex flex-column align-items-center mt-5 mb-5">
+      <p class="title mb-5">CATEGORIES</p>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4" data-aos="slide-right" data-aos-duration="500" data-aos-offset="0"
+          data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+          <div class="card mb-4">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-sofa-single-outline"></span>
+              <p class="card-title mt-2">LIVING ROOM</p>
+              <p class="card-subtitle text-muted m-0">Sofas, coffee tables, couches</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-aos="slide-left" data-aos-duration="500" data-aos-delay="500"
+          data-aos-offset="0" data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+          <div class="card mb-4">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-bed-king-outline"></span>
+              <h5 class="card-title mt-2">BEDROOM</h5>
+              <p class="card-subtitle text-muted m-0">Beds, nightstands, dressers</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-aos="slide-right" data-aos-duration="500" data-aos-delay="1000"
+          data-aos-offset="0" data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+          <div class="card mb-4">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-file-cabinet"></span>
+              <h5 class="card-title mt-2">DINING ROOM</h5>
+              <p class="card-subtitle text-muted m-0">Tables, chairs, cabinets</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-aos="slide-left" data-aos-duration="500" data-aos-delay="1500"
+          data-aos-offset="0" data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+          <div class="card mb-4">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-shower"></span>
+              <h5 class="card-title mt-2">BATHROOM</h5>
+              <p class="card-subtitle text-muted m-0">Vanities, mirrors, lighting</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card mb-4" data-aos="slide-right" data-aos-duration="500" data-aos-delay="2000"
+            data-aos-offset="0" data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-lamp"></span>
+              <h5 class="card-title mt-2">DECOR & FURNITURE</h5>
+              <p class="card-subtitle text-muted m-0">Cushions, wall art, drapery</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" data-aos="slide-left" data-aos-duration="500" data-aos-delay="2500"
+          data-aos-offset="0" data-aos-easing="ease-in" data-aos-anchor-placement="top-center" data-aos-once="true">
+          <div class="card mb-4">
+            <div class="card-body p-0 pb-3">
+              <span class="mdi mdi-baby-face-outline"></span>
+              <h5 class="card-title mt-2">KIDS ROOM</h5>
+              <p class="card-subtitle text-muted m-0">Kids beds, trundlers, dressers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!----------- card-trending products ----------->
+  <section class="section04 d-flex justify-content-center mb-5">
+    <div class="container m-lg-5 d-flex flex-column align-items-center justify-content-center">
+      <h3 class="mt-5 mb-5">TRENDING PRODUCTS</h3>
+      <div class="row row-30 row-lg-50">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/garden-table.png">
+                  <img src="./materials/garden-table.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">GARDEN TABLE</h6>
+              <p class="card-subtitle m-0">
+                <span style="text-decoration: line-through;">$30.00</span>
+                &nbsp;
+                <span class="price">$23.00</span>
+              </p>
+            </div>
+            <span class="tag tag-sale">sale</span>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/club-chair.png">
+                  <img src="./materials/club-chair.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">CLUB CHAIR</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$13.00</span>
+              </p>
+            </div>
+            <span class="tag tag-new">new</span>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/pendant-lamp.png">
+                  <img src="./materials/pendant-lamp.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">PENDANT LAMP</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$17.00</span>
+              </p>
+            </div>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/dark-grey-club-chaur.png">
+                  <img src="./materials/dark-grey-club-chaur.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">DARK GREY CLUB CHAIR</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$14.00</span>
+              </p>
+            </div>
+            <span class="tag tag-new">new</span>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/table-lamp.png">
+                  <img src="./materials/table-lamp.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">TABLE LAMP</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$11.00</span>
+              </p>
+            </div>
+            <span class="tag tag-new">new</span>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/orange-stacking-chair.png">
+                  <img src="./materials/orange-stacking-chair.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">ORANGE STACKING CHAIR</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$15.00</span>
+              </p>
+            </div>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/floor-lamp.png">
+                  <img src="./materials/floor-lamp.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">FLOOR LAMP</h6>
+              <p class="card-subtitle m-0">
+                <span style="text-decoration: line-through;">$32.00</span>
+                &nbsp;
+                <span class="price">$22.00</span>
+              </p>
+            </div>
+            <span class="tag tag-sale">sale</span>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="product-img">
+                <a class="image-popup-no-margins" href="./materials/white-chair.png">
+                  <img src="./materials/white-chair.png" class="card-img-top">
+                </a>
+              </div>
+              <h6 class="card-title mt-3">WHITE CHAIR</h6>
+              <p class="card-subtitle m-0">
+                <span class="price">$10.00</span>
+              </p>
+            </div>
+            <div class="btn">
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+              <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!----------- introduction ----------->
+  <section class="section05 text-center">
+    <div class="container mt-5 mb-5 d-flex">
+      <div class="pic col-sm-6 col-md-5 col-lg-7">
+        <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/about-8-668x330.png">
+      </div>
+      <div class="r">
+        <div class="rt">
+          <p class="title m-3 mt-5 " style="font-weight: 400;">
+            PROVIDING THE BEST FURNITURE AND DECOR
+          </p>
+          <p class="text m-3" style="line-height: 1.375; color: #777;">
+            At Sofa, we aim to supply our customers with the first-class furniture & decor products that their life
+            comfortable.
+          </p>
+        </div>
+        <div class="rb">
+          <div class="d-flex justify-content-center m-3">
+            <button>
+              <span class="material-symbols-outlined align-text-top">arrow_forward</span>
+            </button>
+            <div class="ms-3">
+              <h6 class="mb-0" style="font-weight: bolder;">Sam Williams</h6>
+              <span style="font-style: italic; font-size: 14px;">Founder</span>
+            </div>
+          </div>
+          <div class="sign">
+            <img class="mt-3" style="max-width: 100%;"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/signature-1-160x55.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!----------- card-portfolio ----------->
+  <section class="section06 text-center mt-5 mb-5">
+    <div class="container w-100 h-100 d-flex flex-column align-items-center">
+      <h3>PORTFOLIO</h3>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-7-270x250.jpg">
+            <div class="card-body">
+              <p class="card-title">SUNSHINE RESTAURANT</p>
+              <p class="card-text">DECOR</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class=" card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-5-270x530.jpg">
+            <div class="card-body">
+              <p class="card-title">QUADRO HOTEL</p>
+              <p class="card-text">FURNITURE</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-3-270x250.jpg">
+            <div class="card-body">
+              <p class="card-title">U-STYLE FASHION HOUSE</p>
+              <p class="card-text">DECOR</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-4-270x250.jpg">
+            <div class="card-body">
+              <p class="card-title">FLASH CAFE</p>
+              <p class="card-text">FURNITURE</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-6-270x250.jpg">
+            <div class="card-body">
+              <p class="card-title">NEW YORK PUBLIC LIBRARY</p>
+              <p class="card-text">DECOR</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-1-570x530.jpg">
+            <div class="card-body">
+              <p class="card-title">Q-BIZ COWORKING</p>
+              <p class="card-text">FURNITURE</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="card m-3" style="width: 17rem;">
+            <img class="card-img-top"
+              src="https://ld-wt73.template-help.com/wt_prod-22491/images/portfolio-2-570x250.jpg">
+            <div class="card-body">
+              <p class="card-title">MONROE’S BAR</p>
+              <p class="card-text">DECOR</p>
+              <button>
+                <span class="material-symbols-outlined">search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!----------- swiper ----------->
+  <section class="section07 text-center">
+    <div class="container">
+      <h3 class="mt-5 mb-5">BLOG</h3>
+      <div class="swiper swiperbottom">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="d-flex flex-column align-items-center">
+              <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/post-10-420x368.jpg">
+              <div class="title mt-2">
+                Top 20 Interior Home Decor <br>Trends of 2021
+              </div>
+              <div class="subtitle mt-2 mb-2">
+                August 9, 2021
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex flex-column align-items-center">
+              <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/post-11-420x368.jpg">
+              <div class="title mt-2">
+                How to Choose Furniture for <br>Your Home
+              </div>
+              <div class="subtitle mt-2 mb-2">
+                August 9, 2021
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex flex-column align-items-center">
+              <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/post-12-420x368.jpg">
+              <div class="title mt-2">
+                LED Lighting and Its Benefits <br>for Homeowners
+              </div>
+              <div class="subtitle mt-2 mb-2">
+                August 9, 2021
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex flex-column align-items-center">
+              <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/post-13-420x368.jpg">
+              <div class="title mt-2">
+                What to Look for When <br> Shopping for Chairs Online
+              </div>
+              <div class="subtitle mt-2 mb-2">
+                August 9, 2021
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="d-flex flex-column align-items-center">
+              <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/post-14-420x368.jpg">
+              <div class="title mt-2">
+                Ways to Decorate Your Home <br> with the Color Red
+              </div>
+              <div class="subtitle mt-2 mb-2">
+                August 9, 2021
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <!----------- footer ----------->
+  <section class="section08">
+    <div class="container w-100 h-100 mb-3">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/logo-inverse-212x88.png">
+          <br>
+          <ul class="ps-0 mb-0">
+            <li>Weekdays:&nbsp;&nbsp;08:00am - 08:00pm</li>
+            <li>Weekends:&nbsp;&nbsp;10:00am - 06:00pm</li>
+          </ul>
+          <hr>
+          <div class="socialmedia m-0">
+            <span> Get Social </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="mdi mdi-facebook"></span>
+            <span class="mdi mdi-twitter"></span>
+            <span class="mdi mdi-instagram"></span>
+            <span class="mdi mdi-google-plus"></span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 contacts mt-5">
+          <h6> CONTACTS </h6>
+          <div class="location">
+            <span class="mdi mdi-map-marker"></span>
+            <span>523 Sylvan Ave, 5th Floor<br>Mountain View, CA 94041 USA</span>
+          </div>
+          <div class="tel">
+            <span class="mdi mdi-phone"></span>
+            <span>+1 (844) 123 456 78</span>
+          </div>
+          <div class="mail">
+            <span class="mdi mdi-email-outline"></span>
+            <span>info@demolink.org</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="mt-5">
+            <h6> NEWSLETTER </h6>
+            <span>Subscribe to our newsletter to receive weekly news, updates, special offers, and exclusive
+              discounts.</span>
+          </div>
+          <div class="email">
+            <div class="input mt-3 mt-3 mb-3">
+              <p class="m-0">Enter your e-mail</p>
+              <input class="m-0 p-0" type="text" style="width: 300px;">
+            </div>
+            <button class=" m-3">
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!----------- copyright ----------->
+  <section class="section09 text-center m-2">
+    <div class="container w-100 h-100">
+      <div class="row">
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+          <span>&copy; 2024 Sofa. All rights reserved</span>
+        </div>
+        <div class="col-12 col-md-4 col-md-order-1 d-flex justify-content-center align-items-center">
+          <span>Privacy Policy</span>
+        </div>
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
+          <div class=" d-flex justify-content-center">
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/payment-1-45x15.png" alt="visa">
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/payment-2-46x28.png" alt="mastercard">
+            <img src="https://ld-wt73.template-help.com/wt_prod-22491/images/payment-3-62x17.png" alt="paypal">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- bootstrap -->
+  <script src="./js/bootstrap.bundle.js"></script>
+  <!-- jquery -->
+  <script src="./js/jquery-3.7.1.js"></script>
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- aos -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- lightbox -->
+  <script src="./js/jquery.magnific-popup.js"></script>
+  <script src="./js/jquery.magnific-self.js"></script>
+
+
+
+
+  <script>
+    // ----------- swiper -----------
+
+    var swipertop = new Swiper(".swipertop", {
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
+    });
+
+    var swiperbottom = new Swiper(".swiperbottom", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        }
+      }
+    });
+
+    // ----------- aos -----------
+    AOS.init();
+
+  </script>
+</body>
+
+</html>

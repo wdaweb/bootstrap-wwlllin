@@ -1,0 +1,9 @@
+.row-30 > * {
+	margin-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+	.row-lg-50 {
+		margin-bottom: 50px;
+	}
+}
